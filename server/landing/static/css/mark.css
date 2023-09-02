@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap');
+body{
+    font-family: 'Almarai', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url(../img/hero-bg.jpg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+.back-2{
+    width: 100%;
+    background-color: rgba(170, 170, 170, 0.308);
+}
+

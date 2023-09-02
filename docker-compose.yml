@@ -1,0 +1,38 @@
+version: "3"
+
+services: 
+    db:
+        image: postgres:12
+        container_name: alltargeting_db
+        environment:
+            - POSTGRES_HOST_AUTH_METHOD=trust
+        volumes:
+            - alltargeting-db:/var/lib/postgresql/data
+    server:
+        container_name: alltargeting_server
+        image: docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+        environment:
+            - DJANGO_SETTINGS_MODULE:alltargeting.settings.dev
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - ./:/app
+        ports:
+            - "8000:8000"
+        depends_on: 
+            - db
+    redis:
+        container_name: alltargeting_redis
+        image: redis
+    celery:
+        container_name: alltargeting_celery
+        image: docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+        command: celery -A alltargeting worker -l info
+        environment:
+            - DJANGO_SETTINGS_MODULE=alltargeting.settings.dev
+        volumes:
+            - ./:/app
+        depends_on:
+            - db
+            - redis
+volumes: 
+    alltargeting-db:

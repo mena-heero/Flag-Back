@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:12
+    container_name: alltargeting_db
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - alltargeting-db:/var/lib/postgresql/data
+  server:
+    container_name: alltargeting_server
+    image: docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+    environment:
+      - DJANGO_SETTINGS_MODULE:alltargeting.settings.dev
+    command: gunicorn -w 4 -b unix:/app/server/socket/ALLTARGETING.sock -b 0.0.0.0:8000 alltargeting.wsgi:application
+    volumes:
+      - ./server/.env:/app/server/.env
+      - ./server/static:/app/server/static
+      - ./server/alltargeting/static:/app/server/alltargeting/static
+      - ./server/media:/app/server/media
+      - ./server/alltargeting/media:/app/server/alltargeting/media
+      - ./server/socket:/app/server/socket
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  redis:
+    container_name: alltargeting_redis
+    image: redis
+  celery:
+    container_name: alltargeting_celery
+    image: docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+    command: celery -A alltargeting worker -l info
+    environment:
+      - DJANGO_SETTINGS_MODULE=alltargeting.settings.dev
+    volumes:
+      - ./server/.env:/app/server/.env
+      - ./server/static:/app/server/static
+      - ./server/alltargeting/static:/app/server/alltargeting/static
+      - ./server/media:/app/server/media
+      - ./server/alltargeting/media:/app/server/alltargeting/media
+      - ./server/socket:/app/server/socket
+    depends_on:
+      - db
+      - redis
+volumes:
+  alltargeting-db:

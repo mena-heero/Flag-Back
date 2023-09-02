@@ -1,0 +1,96 @@
+name: Build
+on:
+  push:
+    branches:
+      - dev
+      - stable
+
+jobs:
+  development-build:
+    name: Development Build
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git Repo
+        uses: actions/checkout@v2
+      - name: Docker Login
+
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login docker.pkg.github.com -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+      - name: Development Build Script
+        run: |
+          docker build -f ./server/Dockerfile-dev . -t alltargeting:dev
+          docker tag alltargeting:dev docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+          docker push docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+  development-deploy:
+    name: Development Deploy
+    needs: development-build
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Server SSH Access
+        uses: garygrossgarten/github-action-ssh@release
+
+        with:
+          host: ${{ secrets.DEV_SERVER_IP }}
+          username: ${{ secrets.DEV_SERVER_USERNAME }}
+          passphrase: ""
+          privateKey: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
+          port: 22
+
+          command: |
+            cd /www/flagedu/
+            docker-compose pull
+            docker-compose stop
+            docker-compose up -d
+            docker-compose exec -T server python ./manage.py migrate
+            docker-compose exec -T server python ./manage.py collectstatic --noinput
+            docker image prune -f
+  production-build:
+    name: Production Build
+    if: github.ref == 'refs/heads/stable'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git Repo
+        uses: actions/checkout@v2
+      - name: Docker Login
+
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login docker.pkg.github.com -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+      - name: Production Build Script
+        run: |
+          docker build -f ./server/Dockerfile-prod . -t alltargeting:prod
+          docker tag alltargeting:prod docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:prod
+          docker push docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:prod
+  production-deploy:
+    name: Production Deploy
+    needs: production-build
+    if: github.ref == 'refs/heads/stable'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Server SSH Access
+        uses: garygrossgarten/github-action-ssh@release
+
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          passphrase: ""
+          privateKey: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+          port: 22
+
+          command: |
+            cd /www/flagedu/
+            docker-compose pull
+            docker-compose stop
+            docker-compose up -d
+            docker-compose exec -T server python ./manage.py migrate
+            docker-compose exec -T server python ./manage.py collectstatic --noinput
+            docker image prune -f

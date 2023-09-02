@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="x-apple-disable-message-reformatting">
+	<title></title>
+	<!--[if mso]>
+	<noscript>
+		<xml>
+			<o:OfficeDocumentSettings>
+				<o:PixelsPerInch>96</o:PixelsPerInch>
+			</o:OfficeDocumentSettings>
+		</xml>
+	</noscript>
+	<![endif]-->
+	<link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Raleway:wght@300;800&display=swap" rel="stylesheet">
+	<style>
+		table, td, div, h1, p {font-family: Arial, sans-serif;}
+		.otp-container{
+			width: 200px;
+			height: 50px;
+			padding: 2px;
+			background-color: white;
+			border-radius: 10px;
+			line-height: 50px;
+			font-size: 24px;
+			font-weight: 600;
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			border: 1px solid red;
+		}
+
+		li {
+			float: left;
+		}
+		li a{
+		}
+	</style>
+</head>
+<body style="margin:0;padding:0;">
+	<table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+		<tr>
+			<td align="center" style="padding:0;">
+				<table role="presentation" style="width:500px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
+					<tr>
+						<td align="center" style="padding:10px 50px 30px 50px;background:#000641;background-image: url(http://167.71.134.124/media/images/background.original.png);background-size: contain;background-repeat: no-repeat;">
+							{% if reason == "forget_password" %}
+								<img src="http://167.71.134.124/media/images/key.original.png" alt="vemate" width="225px" style="height:auto;display:block;" />
+								<h1 style="font-family: 'Raleway', sans-serif; color: #ffffff;margin-top: 0; margin-bottom: 10px;"><span style="font-weight: 800;">Forgot </span> <span style="font-weight: 300;">your password?</span></h1>
+								<p style="font-family: 'Catamaran', sans-serif; color: #a0a8c4;line-height: 20px;">That's ok, it happens! Here is your OTP to reset your password:</p>
+							{% elif reason == "verify" %}
+								<img src="http://167.71.134.124/media/images/lock.original.png" alt="vemate" width="225px" style="height:auto;display:block;" />
+								<h1 style="font-family: 'Raleway', sans-serif; color: #ffffff;margin-top: 0; margin-bottom: 10px;"><span style="font-weight: 800;">User </span> <span style="font-weight: 300;">Verification</span></h1>
+								<p style="font-family: 'Catamaran', sans-serif; color: #a0a8c4;line-height: 20px;">Hi! Please use the verification code below:</p>
+							{% else %}
+								<img src="http://167.71.134.124/media/images/logo.original.png" alt="vemate" width="225px" style="height:auto;display:block;" />
+								<h1 style="font-family: 'Raleway', sans-serif; color: #ffffff;margin-top: 0; margin-bottom: 10px;"><span style="font-weight: 800;">OTP </span> <span style="font-weight: 300;">for Flagedu</span></h1>
+							{% endif %}
+							<div class="otp-container">
+								{{ otp }}
+							</div>
+							<p style="font-family: 'Catamaran', sans-serif; color: #a0a8c4;line-height: 20px;">If you didn't make this request you can safely <br>ignore this email</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-top: 25px; padding-bottom: 15px; background:#000641; border-top: 1px solid #393e6a;">
+							<center>
+								<div>
+									<a href="https://www.facebook.com/vematecom" style="color:#ffffff"><img src="http://167.71.134.124/media/images/facebook.original.png" alt="Facebook" width="38" style="width: 30px;" /></a>
+									<a href="https://twitter.com/Vemate_Official" style="color:#ffffff"><img src="http://167.71.134.124/media/images/twitter.original.png" alt="Twitter" width="38" style="width: 30px;" /></a>
+									<a href="https://www.linkedin.com/company/vemate/mycompany/" style="color:#ffffff;"><img src="http://167.71.134.124/media/images/linkedin.original.png" alt="LinkedIn" width="38" style="width: 30px;" /></a>
+									<a href="https://www.instagram.com/vemateofficial/?utm_medium=copy_link" style="color:#ffffff"><img src="http://167.71.134.124/media/images/instagram.original.png" alt="Instagram" width="38" style="width: 30px;" /></a>
+									<a href="https://t.me/vemateofficial" style="color:#ffffff"><img src="http://167.71.134.124/media/images/telegram.original.png" alt="Telegram" width="38" style="width: 30px;" /></a>
+								</div>
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-bottom: 30px;background:#000641;color: #333867; font-size: 12px;" align="center">
+							<span>Copyright © 2022. Flagedu</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
