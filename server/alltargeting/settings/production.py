@@ -7,6 +7,8 @@ ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://flagedu.com",
+    "https://dev.flagedu.com",
+    "localhost",
 ]
 
 try:

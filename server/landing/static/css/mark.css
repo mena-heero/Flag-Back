@@ -4,16 +4,67 @@ body{
     font-family: 'Almarai', sans-serif;
     padding: 0;
     margin: 0;
-    background-image: url(../img/hero-bg.jpg);
-    background-size: 100%;
+    background: #000;
+    background-image: url(../img/back.jpg);
+    background-size: contain;
     background-repeat:no-repeat;
+    
+    
+}
+
+.img-logo{
+    width: 130px;
+}
+
+.co-img{
+    width: 200px;
+}
+.co-img:hover{
+    opacity: 0.8;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+.img-invest{
+    width: 275px;
+    height: 80%;
+}
+@media screen and (max-width: 480px) {
+    .img-invest{
+        width: 200px;
+    }
+}
+.img-whay{
+    width: 500px;
+    
+
+}
+@media screen and (max-width: 800px) {
+    .img-whay{
+        width: 400px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .img-whay{
+        width: 300px;
+    }
+    
 }
 
 
-
-
-
-
+@media screen and (max-width: 351px) {
+    .img-whay{
+        width: 250px;
+    }
+    
+}
+.img-user{
+    width: 100%;
+}
+.text-color{
+    color:#0ba1ac;
+}
+.bg-color{
+    background-color: #0ba1ac;
+}
 
 
 
@@ -23,3 +74,47 @@ body{
     background-color: rgba(170, 170, 170, 0.308);
 }
 
+# Featured Services Section
+--------------------------------------------------------------*/
+.featured-services .service-item {
+  padding: 30px;
+  transition: all ease-in-out 0.4s;
+  background: var(--color-white);
+  height: 100%;
+}
+
+.featured-services .service-item .icon {
+  margin-bottom: 10px;
+}
+
+.featured-services .service-item .icon i {
+  color: var(--color-primary);
+  font-size: 36px;
+  transition: 0.3s;
+}
+
+.featured-services .service-item h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.featured-services .service-item h4 a {
+  color: var(--color-secondary);
+  transition: ease-in-out 0.3s;
+}
+
+.featured-services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.featured-services .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0 60px 0 rgba(var(--color-secondary-rgb), 0.1);
+}
+
+.featured-services .service-item:hover h4 a {
+  color: var(--color-primary);
+}

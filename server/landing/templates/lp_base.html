@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      name="description"
+      content="Unlock your trading potential with Flagedu's trading signals. Expert insights and actionable recommendations backed by a money-back guarantee for confident trading. Join us for financial empowerment."
+    />
+    <meta
+      name="keywords"
+      content="Flagedu, trading signals, money-back guarantee, financial empowerment, expert insights, actionable recommendations, Trusted Brokers, AI Trading , AI Investing"
+    />
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta
+      property="og:title"
+      content="Flagedu - Your Ultimate Trading and Investment Academy"
+    />
+    <meta
+      property="og:description"
+      content="Unlock your trading potential with Flagedu's trading signals. Expert insights and actionable recommendations backed by a money-back guarantee for confident trading. Join us for financial empowerment."
+    />
+
+    <!-- TITLE BLOCK -->
+    <title>Flagedu | {% block title %} {% endblock %}</title>
+
+    <!-- Favicons -->
+    <link href="{% static 'img/fav.png' %}" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'css/aos.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    {% block add_css %} {% endblock %}
+  </head>
+  <body>
+    {% block content %} {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
+
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/glightbox.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script>
+      document.body.addEventListener("htmx:configRequest", (event) => {
+        event.detail.headers["X-CSRFToken"] = "{{ csrf_token }}";
+      });
+
+      htmx.onLoad(function (content) {
+        var sortables = content.querySelectorAll(".sortable");
+        for (var i = 0; i < sortables.length; i++) {
+          var sortable = sortables[i];
+          new Sortable(sortable, {
+            animation: 150,
+            ghostClass: "blue-background-class",
+          });
+        }
+      });
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% block add_js %} {% endblock %}
+  </body>
+</html>
