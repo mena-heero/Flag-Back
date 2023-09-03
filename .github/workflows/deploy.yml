@@ -40,15 +40,15 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: Server SSH Access
-        uses: appleboy/ssh-action@v0.1.10
+        uses: garygrossgarten/github-action-ssh@release
         with:
           host: ${{ secrets.DEV_SERVER_IP }}
           username: ${{ secrets.DEV_SERVER_USERNAME }}
           passphrase: ""
-          key: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
+          privateKey: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
           port: 22
 
-          script: |
+          command: |
             cd /www/fl
             docker-compose pull
             docker-compose stop
