@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;1000&display=swap');
+
+
+
+
+/* 
+---------------------------------------------
+reset 
+--------------------------------------------- 
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: #22b3c1;
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 30px;
+  color: #afafaf;
+}
+
+img {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 
+---------------------------------------------
+Global Styles
+--------------------------------------------- 
+*/
+html,
+body {
+  background: #fff;
+  font-family: 'Cairo', sans-serif;
+}
+
+::selection {
+  background: #22b3c1;
+  color: #fff;
+}
+
+
+
+::-moz-selection {
+  background: #22b3c1;
+  color: #fff;
+}
+
+.text-button a {
+  font-size: 14px;
+  color: #22b3c1;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+.text-button a i {
+  margin-left: 5px;
+  transition: all .3s;
+}
+
+.text-button a:hover i {
+  margin-left: 10px;
+}
+
+
+.text-color{
+  color: #22b3c1; 
+}
+
+.border-button a {
+  font-size: 14px;
+  color: #22b3c1;
+  background-color: transparent;
+  border: 1px solid #22b3c1;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.border-button a:hover {
+  background-color: #22b3c1;
+  color: #fff;
+}
+
+.main-button a {
+  font-size: 14px;
+  color: #fff;
+  background-color: #22b3c1;
+  border: 1px solid #22b3c1;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-button a:hover {
+  background-color: #fff;
+  color: #22b3c1;
+  border: 1px solid #fff;
+}
+
+section {
+  margin-top: 120px;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 2;
+  margin-top: 0px;
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+.section-heading h2 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  line-height: 36px;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #2a2a2a;
+}
+
+.text-co{
+  color: #22b3c1;
+ }
+.logo-img{
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+.modal {
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: transparent;
+  font-family: 'Cairo', sans-serif; }
+  .modal .logo a img {
+    width: 30px; }
+  .modal .modal-content {
+    background-color: transparent;
+    border: none;
+    border-radius: 7px; }
+    .modal .modal-content .modal-body {
+      border-radius: 7px;
+      overflow: hidden;
+      background-color: #fff;
+      padding-left: 0px;
+      padding-right: 0px;
+      -webkit-box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.9); }
+      .modal .modal-content .modal-body h2 {
+        font-size: 18px; 
+        font-family: 'Cairo', sans-serif;}
+        
+      .modal .modal-content .modal-body p {
+        color: #777;
+        font-size: 14px;
+       }
+        
+      .modal .modal-content .modal-body h3 {
+        font-weight: 700;
+        color: #000;
+        font-size: 22px;
+        }
+ 
+      .modal .modal-content .modal-body .promo-img {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+---------------------------------------------
+ Page Style
+--------------------------------------------- 
+*/
+.img-he{
+width:500px
+
+}
+.img-hero{
+  width: 100px;
+}
+.second-page-heading {
+  background-image: url(../img/heading-bg-02.webp);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 260px 0px 190px 0px;
+  text-align: center;
+}
+
+.second-page-heading h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.second-page-heading h4::after {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: rgba(250, 250, 250, 0.3);
+  content: '';
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50px);
+}
+
+.second-page-heading h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.second-page-heading p {
+  padding: 0px 15%;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.second-page-heading .main-button a {
+  border-color: #fff;
+  color: #22b3c1;
+  background-color: #fff;
+}
+
+.second-page-heading .main-button a:hover {
+  border-color: #22b3c1;
+  background-color: #22b3c1;
+  color: #fff;
+}
+
+.reservation-info {
+  margin-top: -99px;
+}
+ 
+.more-info .info-item {
+  background-color: #fff;
+  border-radius: 23px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 30px;
+}
+
+.more-info .info-item i {
+  background-color: #f0f0f0;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50px;
+  color: #22b3c1;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.more-info .info-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.more-info .info-item a {
+  font-size: 15px;
+  color: #22b3c1;
+}
+
+.reservation-form {
+  margin: 120px 0px;
+}
+
+.reservation-form #map {
+  margin-bottom: -6px;
+}
+
+.reservation-form #reservation-form h4 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reservation-form #reservation-form h4 em {
+  font-style: normal;
+  color: #22b3c1;
+}
+
+.reservation-form #reservation-form {
+  padding: 60px 40px;
+  background-color: #f9f9f9;
+  border-bottom-right-radius: 23px;
+  border-bottom-left-radius: 23px;
+}
+
+.reservation-form #reservation-form label {
+  font-size: 15px;
+  color: #afafaf;
+}
+
+.reservation-form #reservation-form input,
+.reservation-form #reservation-form select {
+  width: 100%;
+  height: 46px;
+  background-color: transparent;
+  border-radius: 23px;
+  border: 1px solid #e0e0e0;
+  padding: 0px 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.reservation-form #reservation-form input.date {
+  color: #aaa;
+}
+
+.reservation-form #reservation-form button {
+  font-size: 14px;
+  color: #fff;
+  background-color: #22b3c1;
+  border: 1px solid #22b3c1;
+  padding: 12px 30px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.reservation-form #reservation-form button:hover {
+  opacity: 0.8;
+}
+
+
+
+/* 
+---------------------------------------------
+Responsive Style
+--------------------------------------------- 
+*/
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 575px) {
+
+}
+
+
+@media (max-width: 767px) {
+  #section-1 .content-slider .slider .banner .banner-inner-wrapper {
+    padding-top: 120px;
+  }
+  #section-1 .content-slider .slider .banner .banner-inner-wrapper h2 {
+    font-size: 15px;
+  }
+  #section-1 .content-slider .slider .banner .banner-inner-wrapper h1 {
+    font-size: 36px;
+  }
+  #section-1 .more-info {
+    padding: 30px;
+    margin-top: 30px !important;
+    border-radius: 23px;
+    bottom: 110px;
+    width: 95%;
+    left: 2.5%;
+  }
+  #section-1 .more-info i {
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-top: 8px;
+  }
+  .visit-country .item .right-content .main-button a {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+  .main-button a {
+    text-align: center;
+  }
+  #section-1 .more-info h4 {
+    font-size: 14px !important;
+  }
+  #section-1 .content-slider nav .controls label { 
+    width: 7% !important;
+  }
+  .visit-country .item .right-content ul li {
+    width: 30%;
+  }
+  .visit-country .item .right-content h4 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  #section-1 .more-info {
+    margin-top: 60px;
+  }
+  #section-1 .more-info h4 span {
+    font-size: 15px;
+  }
+  #section-1 .more-info h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  #section-1 .main-button {
+    text-align: left;
+  }
+  #section-1 .content-slider nav .controls label {
+    width: 15%;
+  }
+  .visit-country .item .right-content ul li {
+    width: 30% !important;
+  }
+  .visit-country .item .right-content {
+    position: relative;
+  }
+  
+  .visit-country .side-bar-map {
+    margin-left: 0px;
+    margin-top: 60px;
+  }
+  .call-to-action h2,
+  .call-to-action h4 {
+    text-align: center;
+  }
+  .call-to-action .border-button {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .about-main-content .content p {
+    padding: 0px 5%;
+  }
+  .weekly-offers .container-fluid {
+    padding: 0px;
+  }
+  .more-about .left-image {
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
+  .search-form #search-form h4 {
+    margin-bottom: 15px;
+  }
+  .search-form #search-form select {
+    margin-bottom: 30px;
+  }
+  .amazing-deals .item .image {
+    border-top-right-radius: 23px;
+    border-bottom-left-radius: 0px;
+  }
+  .amazing-deals .item {
+    padding-right: 0px;
+  }
+  .amazing-deals .item .content {
+    padding: 30px !important;
+  }
+  .more-info .info-item {
+    margin-bottom: 30px;
+  }
+  .reservation-form #reservation-form {
+    padding: 35px 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #section-1 .more-info h4 span {
+    font-size: 12px;
+  }
+  #section-1 .more-info h4 {
+    font-size: 15px;
+  }
+  .weekly-offers .container-fluid {
+    padding: 0px;
+  }
+}
+
+
+.icon_1{
+  width: 90px;
+}
+
+
+
+
+
