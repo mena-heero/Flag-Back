@@ -33,16 +33,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Server SSH Access
-        uses: garygrossgarten/github-action-ssh@release
+        uses: appleboy/ssh-action@master
 
         with:
           host: ${{ secrets.DEV_SERVER_IP }}
           username: ${{ secrets.DEV_SERVER_USERNAME }}
           passphrase: ""
-          privateKey: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
+          key: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
           port: 22
 
-          command: |
+          script: |
             cd /www/fl
             docker-compose pull
             docker-compose stop
