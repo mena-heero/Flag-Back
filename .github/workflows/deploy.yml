@@ -2,8 +2,8 @@ name: Build
 on:
   push:
     branches:
-      - dev
-      - stable
+      - dev-cloud
+      - stable-cloud
 
 jobs:
   development-build:
