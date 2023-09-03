@@ -2,6 +2,7 @@ import requests
 import hashlib
 import json
 import time
+from decouple import config
 
 
 def make_sha1(s, encoding="utf-8"):
@@ -9,10 +10,8 @@ def make_sha1(s, encoding="utf-8"):
 
 
 def create_access_key(time):
-    PARTNER_ID = "25974691"
-    PARTNER_SECRET_KEY = (
-        "94e1979cbeee02d5fc820dfce9b155bf1a29dcb58a07d393899e144d7af93b10"
-    )
+    PARTNER_ID = config("partner_id"),
+    PARTNER_SECRET_KEY = config("partner_secret_key")
 
     TIME = time
 
@@ -27,7 +26,7 @@ def get_evest_token():
     l_time = int(time.time())
     access_key = create_access_key(l_time)
 
-    partner_id = "25974691"
+    partner_id = config("DB_NAME"),
 
     data = {
         "partnerId": partner_id,
