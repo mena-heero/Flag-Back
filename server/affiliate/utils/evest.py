@@ -26,7 +26,7 @@ def get_evest_token():
     l_time = int(time.time())
     access_key = create_access_key(l_time)
 
-    partner_id = config("DB_NAME"),
+    partner_id = config("partner_id"),
 
     data = {
         "partnerId": partner_id,
