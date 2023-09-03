@@ -8,7 +8,7 @@ on:
 jobs:
   development-build:
     name: Development Build
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/dev-cloud'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git Repo
@@ -24,8 +24,8 @@ jobs:
       - name: Development Build Script
         run: |
           docker build -f ./server/Dockerfile-dev . -t alltargeting:dev
-          docker tag alltargeting:dev docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
-          docker push docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:dev
+          docker tag alltargeting:dev menaheero/alltargeting:dev
+          docker push menaheero/alltargeting:dev
   development-deploy:
     name: Development Deploy
     needs: development-build
@@ -68,12 +68,12 @@ jobs:
       - name: Production Build Script
         run: |
           docker build -f ./server/Dockerfile-prod . -t alltargeting:prod
-          docker tag alltargeting:prod docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:prod
-          docker push docker.pkg.github.com/mubarak117136/alltargeting/alltargeting:prod
+          docker tag alltargeting:prod menaheero/alltargeting:prod
+          docker push menaheero/alltargeting:prod
   production-deploy:
     name: Production Deploy
     needs: production-build
-    if: github.ref == 'refs/heads/stable'
+    if: github.ref == 'refs/heads/stable-cloud'
     runs-on: ubuntu-latest
     steps:
       - name: Server SSH Access
