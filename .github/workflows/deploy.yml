@@ -32,9 +32,11 @@ jobs:
     if: github.ref == 'refs/heads/dev-cloud'
     runs-on: ubuntu-latest
     steps:
-      - name: Server SSH Access
-        uses: appleboy/ssh-action@master
+      - name: Debug SSH Key
+        run: echo "${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}"
 
+      - name: Server SSH Access
+        uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.DEV_SERVER_IP }}
           username: ${{ secrets.DEV_SERVER_USERNAME }}
