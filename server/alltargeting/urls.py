@@ -26,7 +26,7 @@ urlpatterns = [
     path("api/v1/affiliate/", include("affiliate.urls", namespace="affiliate")),
     path("visit/", CreativeRedirectView.as_view(), name="creative_redirect_view"),
     path('lp/', include('landing.urls')),
-    path('ld/', include('leads.urls')), 
+    
 ]
 
 
