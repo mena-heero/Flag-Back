@@ -1,0 +1,7 @@
+<!-- lead_form.html -->
+
+<form method="POST" action="{% url 'lead_form' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">  
+  </form>

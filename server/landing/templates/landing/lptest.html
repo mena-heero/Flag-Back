@@ -34,13 +34,24 @@
 
            
 
-            <div class="text-center  col-6">
-              <a href="#about" class="btn-get-started scrollto text-center m-4">انضم الينا</a>
-            </div>
-
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="البريد الالكتروني" required>
-            </div>
+            <form method="post" action="{% url 'landing:create_lead' %}">
+              {% csrf_token %}
+              
+              <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+              
+              <div class="text-center col-6">
+                <a href="#about" class="btn-get-started scrollto text-center m-4">انضم الينا</a>
+              </div>
+            
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="البريد الالكتروني" required>
+                {{ form.email.label_tag }}
+                {{ form.email }}
+              </div>
+            
+              <button type="submit" hx-swap="outerHTML">Submit</button>
+            </form>
+            
           </div>
         </div>
 

@@ -42,6 +42,13 @@ INSTALLED_APPS = [
     "company",
     "landing",
     "affiliate",
+    "django_bootstrap5",
+    "django_htmx",
+    'widget_tweaks',
+    'django_extensions',
+    'leads',
+
+
 ]
 
 
@@ -56,8 +63,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",#WhiteNoise
     "django.middleware.security.SecurityMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",#HTMX
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
     
 ]
@@ -84,24 +92,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "alltargeting.wsgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "HOST": "db",
-        "PORT": 5432,
-    }
-}
-#normal sqllite for local testing
 # DATABASES = {
 #     "default": {
-        
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": config("DB_NAME"),
+#         "USER": config("DB_USER"),
+#         "HOST": "db",
+#         "PORT": 5432,
 #     }
 # }
+#normal sqllite for local testing
+DATABASES = {
+    "default": {
+        
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+
+    }
+}
 
 
 
