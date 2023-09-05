@@ -1,0 +1,16 @@
+wagtail==4.1.1
+Django==4.1.3
+psycopg2-binary==2.9.5
+python-decouple==3.6
+djangorestframework==3.14.0
+django-cors-headers==3.13.0
+celery==5.2.3
+redis==4.2.0
+wagtail-instance-selector==2.1.2
+django-extensions==3.2.1
+wagtail-adminsortable==0.1
+pycountry==22.3.5
+ipython==8.12.0
+phonenumbers==8.13.8
+geoip2==4.7.0
+whitenoise

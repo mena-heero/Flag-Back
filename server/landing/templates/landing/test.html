@@ -7,25 +7,71 @@
 
  {% block content %}
  <!-- Error Modal -->
-<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+
+
+<div class="modal fade"   id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+ 
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content "   >
       <div class="modal-header">
-        <h5 class="modal-title" id="errorModalLabel">Error</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <h5 class="modal-title text-left" id="errorModalLabel" > خطأ في التسجيل</h5>
+        <button type="button" class="btn-close m-0" data-dismiss="modal" onclick="$('#errorModal').modal('hide');"   aria-label="Close">
+         
         </button>
       </div>
-      <div class="modal-body">
-        <!-- Error message will be displayed here -->
+      <div class="modal-body ">
+      
+   
         <p id="errorMessage"></p>
       </div>
+      
+      <img style="width:60%;" class="m-auto" src="{% static 'img/error.png' %} ">
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#errorModal').modal('hide');">Close</button>
+     
       </div>
     </div>
-  </div>
+  </div> 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="hero">
         <div class="row d-flex justify-content-center mb-4">
           <img src="{% static 'img/flagedu-ligo.webp' %}" class=" col-4 col-lg-2   img-fluid" data-aos="fade-up"
