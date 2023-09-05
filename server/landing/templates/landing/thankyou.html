@@ -1,10 +1,139 @@
 
 {% extends 'lp_base.html' %}
 
-
+{%load static%}
 {% block content %}
-<div class="jumbotron">
-  <h1 class="display-4">Thank You!</h1>
-  <p class="lead">Your information was received successfully. We'll be in touch soon!</p>
-</div>
+
+
+
+ 
+ 
+  <link href="{% static 'css/thank.css'%}" rel="stylesheet">
+
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="flagedu.com"><img class="img-logo" src="{% static 'img/flagedu-ligo.webp'%}"></a></h1>
+
+      </div>
+
+      
+
+    </div>
+  </header>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="thank">
+
+    <div class="container pt-4">
+      <div class="row justify-content-right">
+        
+       
+<!--
+        <div class="  col-md-12  order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="{% static 'img/giphy.gif'%}" class="img-fluid animated" alt="Flagedu">
+        </div>
+       
+-->
+
+          <div class="col-lg-6 pt-5 col-md-12  pt-lg-0 order-2 order-lg-1  p-3 text-center">
+          <div data-aos="zoom-out">
+
+            <h1 class="text-flagedu">مرحبًا بك في مجتمع المستثمرين الناجحين!</h1> <h1 class="text-center text-flagedu"> مع فلاجيدو  </h1>
+            <h2 class="text-info">
+              
+            </h2>
+
+            <h4 class="text-color">
+              نود أن نشكرك على التسجيل في موقعنا
+            </h4>
+            <h4 class="text-color">
+              نحن متحمسون لمساعدتك على تحقيق أهدافك الاستثمارية
+            </h4>
+
+            <h2 type="button" class="btn btn-info col-5 m-3 text-color shadow "> الصفحة الرئيسية</h2>
+           </div></div>
+
+
+    
+    </div>
+
+  </section><!-- End Hero -->
+
+
+    <!-- ======= inv Section ======= -->
+    <section class="invent pt-5 "  >
+    <div class="container">
+      <div class="row justify-content-center  pt-5">
+        
+       
+
+
+
+          <div class="col-lg-6 pt-5 col-md-12 order-2 order-lg-1  p-3 text-center ">
+
+
+          <div data-aos="zoom-out">
+            <h1><a href="flagedu.com"><img class="img-logo2 img-fluid" src="{% static 'img/flagedu-ligo.webp'%}"></a></h1>
+            <h1 class="text-flagedu  text-light">  
+              نحن هنا لمساعدتك على اتخاذ قرارات استثمارية حكيمة
+              
+            </h1>
+
+              <p class=" text-light text-back p-2 m-1 fs-2">
+              
+              مع توصياتنا وأدواتنا
+              </p>
+
+            
+            
+
+            <h3 class="text-color text-light">
+              ستكون على الطريق الصحيح لتحقيق أهدافك المالية.
+            </h3>
+
+            <h2 type="button" class="btn btn-info col-5 m-3 shadow"> ابدأ الآن</h2>
+           </div></div>
+ 
+ <!-- <div class="col-lg-6  col-md-12  order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="img/thank page.png" class="img-fluid animated " alt="Flagedu">
+        </div>
+        
+      </div> -->
+
+    
+    </div>
+
+  </section>
+    <!-- End invent Section -->
+
+
+
+
+
+
+
+
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock content %}
