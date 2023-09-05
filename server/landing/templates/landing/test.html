@@ -1,5 +1,420 @@
 {% extends 'lp_base.html' %}
+{% load static %}
+
+{% block add_css %}<link href="{% static 'css/lead6.css' %} " rel="stylesheet">
+  
+ {% endblock %}
+
+ {% block content %}
+ <!-- Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Error message will be displayed here -->
+        <p id="errorMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="hero">
+        <div class="row d-flex justify-content-center mb-4">
+          <img src="{% static 'img/flagedu-ligo.webp' %}" class=" col-4 col-lg-2   img-fluid" data-aos="fade-up"
+          data-aos-anchor-placement="top-center">
+          </div>
+        <div class="container">
+
+          
+          <div class="row align-items-center">
+
+
+            <div class="col-lg-6">
+              <div class="intro-wrap">
+                <h2 class="mb-5 text-light"><span class="d-block">كيف تبدأ بالإستثمار في </span> خذ خطوة <span class="text-color2 typed-words"></span></h2>
+    
+                <div class="row">
+                  <div class="col-12" data-aos="fade-left">
+                      <div class="form">
+                          <div class="row mb-2 pr-0">
+                              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
+                                  <input name="name" id="name" class="form-control custom-select" placeholder="الاسم">
+                              </div>
+                              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
+                                  <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني">
+                              </div>
+                          </div>
+                          <div class="row align-items-center">
+                              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                                  <button class="btn btn-primary btn-block" id="submit-button">سجل الان</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 py-3" data-aos="fade-up"
+            data-aos-anchor-placement="top-center">
+              
+                <img src="{% static 'img/flagedu (2).png' %}" alt="Image" class="img-fluid ">
+             
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="untree_co-section">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-6">
+              <h2 class="section-title text-center mb-3">ابدأ خطوتك الآن نحو  التقدم </h2>
+              <p>أبرز الاخبار والمقالات الاقتصادية و التعليمية  </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="flip-up" daili>
+              <div class="media-1">
+                <a href="#" class="d-block mb-3"><img src="{% static 'img/eft_cover (1).webp' %} " alt="Image" class="img-fluid"></a>
+                <span class="d-flex align-items-center loc mb-2">
+                  <span class="icon-room mr-3"></span>
+                  <span>تداول </span>
+                </span>
+                <div class="d-flex align-items-center text-center ">
+                  <div>
+                    <h3><a href="#"   > صناديق الاستثمار المتداولة</a></h3>
+                   
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 " data-aos="flip-up">
+              <div class="media-1">
+                <a href="#" class="d-block mb-3"><img src=" {% static 'img/UnitedHealth Group_thubnails.png' %}" alt="Image" class="img-fluid"></a>
+                <span class="d-flex align-items-center loc mb-2">
+                  <span class="icon-room mr-3"></span>
+                  <span>أسهم </span>
+                </span>
+                <div class="d-flex align-items-center">
+                  <div>
+                    <h3><a href="#">   يونايتيد هيلس جروب  </a></h3>
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="flip-up">
+              <div class="media-1">
+                <a href="#" class="d-block mb-3"><img src="{% static 'img/UnitedHealth Group_thubnails.png' %} " alt="Image" class="img-fluid"></a>
+                <span class="d-flex align-items-center loc mb-2">
+                  <span class="icon-room mr-3"></span>
+                  <span>أخبار</span>
+                </span>
+                <div class="d-flex align-items-center">
+                  <div>
+                    <h3><a href="#">ما مصير أسهم أبل </a></h3>
+                  
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="flip-up">
+              <div class="media-1">
+                <a href="#" class="d-block mb-3"><img src=" {% static 'img/eft_cover (1).webp' %}" alt="Image" class="img-fluid"></a>
+    
+                <span class="d-flex align-items-center loc mb-2">
+                  <span class="icon-room mr-3"></span>
+                  <span>وسطاء</span>
+                </span>
+    
+                <div class="d-flex align-items-center">
+                  <div>
+                    <h3><a href="#">Evest تقييم ومراجعة</a></h3>
+                    
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
-<h1>Hello from base</h1>
+    
+      <div class="untree_co-section">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+
+            
+            <div class="col-lg-6 text-center"  data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
+              <h2 class="section-title text-center mb-3">ما الذي يقدمه فلاجيدو  لك</h2>
+              <p>فلاجيدو افضل  دليل لك  في عالم الاستثمار</p>
+            </div>
+          </div>
+          <div class="row align-items-stretch">
+            <div class="col-lg-4 order-lg-1">
+           <img class="img-fluid" src="{% static 'img/new.png' %}">
+            </div>
+    
+            <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1"  data-aos="fade-up"
+            data-aos-anchor-placement="center-center">
+    
+              <div class="feature-1 d-md-flex">
+                <div class="align-self-center">
+                  <span class="flaticon-house display-4 text-primary  "> <i class="bi bi-award"></i> </span>
+                  <h3 class="text-color2" >شركات التداول </h3>
+                  <p class="mb-0">أفضل الشركات  الموصي بها و الموثوقة في الشرق الاوسط</p>
+                </div>
+              </div>
+    
+              <div class="feature-1 "  data-aos="fade-up"
+              data-aos-anchor-placement="center-center">
+                <div class="align-self-center">
+                  <span class="flaticon-restaurant display-4 "> <i class="bi bi-activity text-primary"></i> </span>
+                  <h3 class="text-color2">تحليلات الاسهم </h3>
+                  <p class="mb-0">تحليلات شاملة للأسهم  والشركات العملاقة </p>
+                </div>
+              </div>
+    
+            </div>
+    
+            <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3"  data-aos="fade-up"
+            data-aos-anchor-placement="center-center">
+    
+              <div class="feature-1 d-md-flex">
+                <div class="align-self-center">
+                  <span class="flaticon-mail display-4 text-primary"> <i class="bi bi-binoculars"></i></span>
+                  <h3 class="text-color2" >اختر وسيطك</h3>
+                  <p class="mb-0"> تستطيع عمل مقارنة بين شركات التداول وتختار الانسب لك</p>
+                </div>
+              </div>
+    
+              <div class="feature-1 d-md-flex"  data-aos="fade-up"
+              data-aos-anchor-placement="center-center">
+                <div class="align-self-center">
+                  <span class="flaticon-phone-call display-4 text-primary"> <i class="bi bi-graph-up-arrow"></i> </span>
+                  <h3 class="text-color2">الاخبار</h3>
+                  <p class="mb-0">  يساعدك فلاجيدو في معرفة الاخبار  العالمية أو المحلية أول بأول </p>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      </div>
+
+
+
+    
+      <div class="untree_co-section count-numbers pt-5">
+        <img class="img-fluid"  src=" {% static 'img/hfm-about-us-slide.jpg' %}">
+        <div class="container mt-5">
+          <div class="row m-auto">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 ">
+              <div class="counter-wrap text-center">
+                <div class="counter">
+                  <span class="" data-number="9313">0</span>
+                </div>
+                <span class="caption">مرجعات شركات التداول </span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 ">
+              <div class="counter-wrap text-center">
+                <div class="counter">
+                  <span class="" data-number="8492">0</span>
+                </div>
+                <span class="caption">توصيات الاسهم</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="counter-wrap text-center">
+                <div class="counter">
+                  <span class="" data-number="10000">0</span>
+                </div>
+                <span class="caption">المتداولين و الخبراء </span>
+              </div>
+            </div>
+
+
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="counter-wrap text-center">
+                <div class="counter">
+                  <span class="" data-number="100">0</span><span class="">%</span>
+                </div>
+                <span class="caption"> دقة التوصيات </span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="untree_co-section">
+        <div class="container">
+          <div class="row text-center justify-content-center mb-5">
+            <div class="col-lg-7"><h2 class="section-title text-center"> تعرف علي المزيد</h2></div>
+
+       
+       
+
+            <div class="row text-center justify-content-center mb-5">
+        <div class="card col-3 m-2 shadow">
+          <div class="card-body">
+            <h5 class="card-title">استثمار في الأسهم السعودية</h5>
+            <p class="card-text"> الاستثمار في الأسهم ربما تكون طريقة رائعة لجعل أموالك تعمل لصالحك وتحقق أرباحًا. وإذا كنت مهتمًا بالاستثمار في الأسهم السعودية ، فأنت محظوظ!          </p>
+            <button type="button" class="btn btn-primary">المزيد</button>
+          </div>
+        </div>
+
+
+        <div class="card col-3  m-2 shadow">
+          <div class="card-body">
+            <h5 class="card-title">  كيفية شراء الأسهم في الإمارات العربية المتحدة  </h5>
+            <p class="card-text">مع اقتصاد قوي ومجموعة متنوعة من الشركات المدرجة في البورصة ، تقدم دولة الإمارات العربية المتحدة ثروة من الفرص الاستثمارية.</p>
+            <button type="button" class="btn btn-primary">المزيد</button>
+          </div>
+        </div>
+
+        <div class="card col-3  m-2 shadow">
+          <div class="card-body">
+            <h5 class="card-title">التداول الاجتماعي: الدليل الكامل</h5>
+            <p class="card-text">برز التداول الاجتماعية كظاهرة شائعة في عالم المال في السنوات الأخيرة. إنها طريقة جديدة للمتداولين للتعلم من بعضهم البعض واتخاذ قرارات استثمارية أفضل. </p>
+            <button type="button" class="btn btn-primary">المزيد</button>
+          </div>
+        </div>
+</div>
+
+        
+        </div>
+      </div>
+    
+    
+     
+    
+    
+     
+      
+      <div class="py-5 cta-section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <h2 class="mb-2 text-white">انضم الآن الي فريق خبراء فلاجيدو </h2>
+              <p class="mb-4 lead text-white text-white-opacity">احصل  علي أفضل التوصيات الاستثمارية من فلاجيدو مجاناٌ اغتنم الفرصة الآن  </p>
+              <p class="mb-0"><a href="booking.html" class="btn btn-outline-white text-white btn-md font-weight-bold">ابدأ الآن</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+     
+
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.js"></script>
+
+  <!--  Main JS File -->
+ 
+  <script>
+      $(function() {
+        var slides = $('.slides'),
+        images = slides.find('img');
+  
+        images.each(function(i) {
+          $(this).attr('data-id', i + 1);
+        })
+  
+        var typed = new Typed('.typed-words', {
+          strings: ["الاسهم "," عقودالفروق"," السندات", "السلع", " المعادن"],
+          typeSpeed: 80,
+          backSpeed: 80,
+          backDelay: 4000,
+          startDelay: 1000,
+          loop: true,
+          showCursor: true,
+          preStringTyped: (arrayPos, self) => {
+            arrayPos++;
+            console.log(arrayPos);
+            $('.slides img').removeClass('active');
+            $('.slides img[data-id="'+arrayPos+'"]').addClass('active');
+          }
+  
+        });
+      })
+
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#submit-button").on("click", function (e) {
+      e.preventDefault();
+
+      // Get input values
+      var name = $("#name").val();
+      var email = $("#email").val();
+
+      // Create data to send to the API
+      var data = {
+        name: name,
+        email: email,
+        csrfmiddlewaretoken: "{{ csrf_token }}" // Include the CSRF token here
+      };
+
+      // Send the Ajax request to your API endpoint
+      $.ajax({
+        type: "POST",
+        url: "/lp/api/leads/", 
+        data: data,
+        success: function (response) {
+          // Handle the success response here
+          window.location.href = '/lp/thankyou/';
+          console.log("API response:", response);
+          // You can update the page or display a success message
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          // Handle the error response here
+          console.log("Ajax request failed:", errorThrown);
+          var errorMessage = xhr.responseJSON && xhr.responseJSON.detail ? xhr.responseJSON.detail : "An error occurred.";
+          $("#errorMessage").text(errorMessage);
+          $("#errorModal").modal("show");
+          // You can display an error message or handle the error as needed
+          
+        }
+      });
+    });
+  });
+</script>
+<script src=" {% static 'js/lead 6.js' %} "></script>
+{% endblock %}

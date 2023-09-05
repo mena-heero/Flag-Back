@@ -1,6 +1,11 @@
 {% extends 'lp_base.html' %}
 {% load static %}
 
+{% block add_css %}<link href="{% static 'css/lead6.css' %} " rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+ {% endblock %}
 
  {% block content %}
     <div class="hero">
@@ -52,17 +57,6 @@
           </div>
         </div>
       </div>
-    
-
-
-
-
-
-
-
-
-
-
 
 
       <div class="untree_co-section">
@@ -325,8 +319,10 @@
   <!-- Vendor JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
   <script src="{% static 'js/aos.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.js"></script>

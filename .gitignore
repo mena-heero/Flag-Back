@@ -3,7 +3,8 @@ __pycache__/
 *$py.class
 
 *.so
-
+pk
+pk.pub
 .Python
 build/
 develop-eggs/

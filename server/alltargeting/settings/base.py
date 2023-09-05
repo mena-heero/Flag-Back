@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     "company",
     "landing",
     "affiliate",
+    "django_bootstrap5",
+    "django_htmx",
+    'widget_tweaks',
+    'django_extensions',
 ]
 
 
@@ -56,8 +60,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",#WhiteNoise
     "django.middleware.security.SecurityMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",#HTMX
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
     
 ]
