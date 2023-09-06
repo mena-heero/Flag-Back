@@ -125,11 +125,10 @@
             error: function (xhr, textStatus, errorThrown) {
               // Handle the error response here
               console.log("Ajax request failed:", errorThrown);
-              var errorMessage =
-                xhr.responseJSON && xhr.responseJSON.detail
-                  ? xhr.responseJSON.detail
-                  : "An error occurred.";
-              alert("Error: " + errorMessage); // Display an error message to the user
+              var errorMessage = xhr.responseJSON && xhr.responseJSON.detail ? xhr.responseJSON.detail : "An error occurred.";
+          $("#errorMessage").text(errorMessage);
+          $("#errorModal").modal("show");
+          // You can display an error message or handle the error as needed
             }
           });
         });
