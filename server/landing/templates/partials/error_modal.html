@@ -1,0 +1,27 @@
+ <!-- Error Modal -->
+
+{%load static%}
+ <div class="modal fade"   id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+ 
+    <div class="modal-dialog" role="document">
+      <div class="modal-content "   >
+        <div class="modal-header">
+          <h5 class="modal-title text-left" id="errorModalLabel" > خطأ في التسجيل</h5>
+          <button type="button" class="btn-close m-0" data-dismiss="modal" onclick="$('#errorModal').modal('hide');"   aria-label="Close">
+           
+          </button>
+        </div>
+        <div class="modal-body ">
+        
+     
+          <p id="errorMessage"></p>
+        </div>
+        
+        <img style="width:60%;" class="m-auto" src="{% static 'img/error.png' %} ">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#errorModal').modal('hide');">Close</button>
+       
+        </div>
+      </div>
+    </div> 
+  </div>

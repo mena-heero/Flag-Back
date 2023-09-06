@@ -2,12 +2,76 @@
 {% load static %}
 
 {% block add_css %}<link href="{% static 'css/lead6.css' %} " rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+  
  {% endblock %}
 
  {% block content %}
+ <!-- Error Modal -->
+
+
+<div class="modal fade"   id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+ 
+  <div class="modal-dialog" role="document">
+    <div class="modal-content "   >
+      <div class="modal-header">
+        <h5 class="modal-title text-left" id="errorModalLabel" > خطأ في التسجيل</h5>
+        <button type="button" class="btn-close m-0" data-dismiss="modal" onclick="$('#errorModal').modal('hide');"   aria-label="Close">
+         
+        </button>
+      </div>
+      <div class="modal-body ">
+      
+   
+        <p id="errorMessage"></p>
+      </div>
+      
+      <img style="width:60%;" class="m-auto" src="{% static 'img/error.png' %} ">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#errorModal').modal('hide');">Close</button>
+     
+      </div>
+    </div>
+  </div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="hero">
         <div class="row d-flex justify-content-center mb-4">
           <img src="{% static 'img/flagedu-ligo.webp' %}" class=" col-4 col-lg-2   img-fluid" data-aos="fade-up"
@@ -24,26 +88,24 @@
                 <h2 class="mb-5 text-light"><span class="d-block">كيف تبدأ بالإستثمار في </span> خذ خطوة <span class="text-color2 typed-words"></span></h2>
     
                 <div class="row">
-                  <div class="col-12 " data-aos="fade-left">
-                    <form class="form">
-                      <div class="row mb-2 pr-0">
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-                          <input name="name" id="" class="form-control custom-select" placeholder="الاسم">
-                        </div>
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-                          <input type="text" class="form-control" name="email" placeholder="البريد الالكتروني">
-                        </div>
-                      </div>    
-                      <div class="row align-items-center">
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                          <input type="submit" class="btn btn-primary btn-block" value="سجل الان" >
-                        </div>
+                  <div class="col-12" data-aos="fade-left">
+                      <div class="form">
+                          <div class="row mb-2 pr-0">
+                              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
+                                  <input name="name" id="name" class="form-control custom-select" placeholder="الاسم">
+                              </div>
+                              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
+                                  <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني">
+                              </div>
+                          </div>
+                          <div class="row align-items-center">
+                              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                                  <button class="btn btn-primary btn-block" id="submit-button">سجل الان</button>
+                              </div>
+                          </div>
                       </div>
-                    </form>
                   </div>
-
-
-                </div>
+              </div>
               </div>
             </div>
 
@@ -358,6 +420,47 @@
 
 
 
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#submit-button").on("click", function (e) {
+      e.preventDefault();
+
+      // Get input values
+      var name = $("#name").val();
+      var email = $("#email").val();
+
+      // Create data to send to the API
+      var data = {
+        name: name,
+        email: email,
+        csrfmiddlewaretoken: "{{ csrf_token }}" // Include the CSRF token here
+      };
+
+      // Send the Ajax request to your API endpoint
+      $.ajax({
+        type: "POST",
+        url: "/lp/api/leads/", 
+        data: data,
+        success: function (response) {
+          // Handle the success response here
+          window.location.href = '/lp/thankyou/';
+          console.log("API response:", response);
+          // You can update the page or display a success message
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          // Handle the error response here
+          console.log("Ajax request failed:", errorThrown);
+          var errorMessage = xhr.responseJSON && xhr.responseJSON.detail ? xhr.responseJSON.detail : "An error occurred.";
+          $("#errorMessage").text(errorMessage);
+          $("#errorModal").modal("show");
+          // You can display an error message or handle the error as needed
+          
+        }
+      });
+    });
+  });
 </script>
 <script src=" {% static 'js/lead 6.js' %} "></script>
 {% endblock %}

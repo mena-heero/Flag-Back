@@ -1,7 +1,4 @@
 {% load static %}
-{% comment %} {% load django_bootstrap5 %} {% endcomment %}
-{% comment %} {% bootstrap_css %}
-{% bootstrap_javascript %} {% endcomment %}
 {% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -56,6 +53,7 @@
   </head>
   <body>
     {% include 'partials/error_modal.html' %}
+    {% include 'partials/success_modal.html' %}
     {% block content %}
 
     {% comment %} {% bootstrap_messages %} {% endcomment %}

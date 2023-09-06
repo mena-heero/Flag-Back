@@ -89,32 +89,26 @@
         $("#submit-button").on("click", function (e) {
           e.preventDefault();
           console.log("Button clicked!");
-      
+    
           // Get input values
           var name = $("#name").val();
           var email = $("#email").val();
           var phone = $("#phone").val();
           var message = $("#message").val();
-      
-          // Check if all required fields are filled
-          //if (!name || !email || !message) {
-          //  alert("Please fill in all required fields.");
-           // return; // Prevent further execution
-         // }
-      
+
           // Create data to send to the API
           var data = {
             name: name,
             email: email,
-            message: message,
             phone:phone,
+            message:message,
             csrfmiddlewaretoken: "{{ csrf_token }}" // Include the CSRF token here
           };
-      
+    
           // Send the Ajax request to your API endpoint
           $.ajax({
             type: "POST",
-            url: "/lp/api/leads/",
+            url: "/lp/api/leads/", 
             data: data,
             success: function (response) {
               // Handle the success response here
@@ -125,11 +119,11 @@
             error: function (xhr, textStatus, errorThrown) {
               // Handle the error response here
               console.log("Ajax request failed:", errorThrown);
-              var errorMessage =
-                xhr.responseJSON && xhr.responseJSON.detail
-                  ? xhr.responseJSON.detail
-                  : "An error occurred.";
-              alert("Error: " + errorMessage); // Display an error message to the user
+              var errorMessage = xhr.responseJSON && xhr.responseJSON.detail ? xhr.responseJSON.detail : "An error occurred.";
+              $("#errorMessage").text(errorMessage);
+              $("#errorModal").modal("show");
+              // You can display an error message or handle the error as needed
+              
             }
           });
         });
