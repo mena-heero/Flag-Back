@@ -28,6 +28,7 @@ h4,
 h5,
 h6 {
   font-family: 'Almarai', sans-serif;
+  color:#10918A;
 }
 
 /*--------------------------------------------------------------
@@ -181,7 +182,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-size: 15px;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+
   color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   transition: 0.3s;
@@ -310,7 +311,7 @@ h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: rgba(255, 255, 255, 0.8);
+
 }
 
 #hero h1 span {
@@ -319,13 +320,13 @@ h6 {
 }
 
 #hero h2 {
-  color: rgba(255, 255, 255, 0.8);
+
   margin-bottom: 40px;
   font-size: 24px;
 }
 
 #hero .btn-get-started {
-  font-family: "Montserrat", sans-serif;
+
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -476,7 +477,7 @@ section {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #aaaaaa;
-  font-family: "Poppins", sans-serif;
+
 }
 
 .section-title h2::after {
@@ -494,7 +495,7 @@ section {
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+
   color: #10918A;
 }
 
