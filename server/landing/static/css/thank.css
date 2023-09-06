@@ -9,7 +9,7 @@
 body {
   
   font-family: 'Cairo', sans-serif;
-  color: #ffffff;
+
 }
 
 a {
@@ -39,6 +39,8 @@ h6 {
 
 .invent{
   background-image: url(../img/thank3.webp);
+
+ 
   background-color: #eef8f6;
  background-size: cover;
  height: 100vh;
@@ -51,6 +53,18 @@ h6 {
  
   }
  
+}
+@media screen and (max-width: 768px) {
+.text-color{
+  color: #d2f9eb;
+}
+.text-flagedu{
+  color: #09ada0;
+}
+
+}
+h1{
+  color:#eef8f6;
 }
 
 
@@ -450,9 +464,9 @@ background-size: cover;
 
 
 .text-flagedu{
-   
-    text-shadow: 2px 2px #00fff23d;
+    text-shadow: 2px 2px #01141380;
     font-weight: 800;
+    color: #038b79;
 }
 .text-back{
     background-color: #10918A;
