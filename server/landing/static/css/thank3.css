@@ -1,0 +1,96 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;600;700;800&display=swap');
+
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+
+  
+  font-family: 'Cairo', sans-serif;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  background-image:url(../img/wave.svg) ;
+  background-size: cover;
+
+
+
+}
+
+a {
+  color: #35a7a1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #10918A;
+  text-decoration: none;
+}
+ 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  
+  font-family: 'Cairo', sans-serif;
+
+
+  color: #18c2b9;
+}
+
+
+
+
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+
+.logo-thank3{
+  width: 200px;
+}
+@media screen and (max-width: 768px) {
+  .logo-thank3{
+    width: 100px;
+  
+  }
+}
+.back1{
+  background-image:url('../img/mesh-833.png') ; ;
+  background-size: cover;
+}
+.cover-container {
+
+  background-color: rgba(78, 223, 199, 0.801) ;
+}
+.logo-thank4{
+  width: 50px;
+  padding: 0 ;
+  margin: 0;
+  opacity:0.5; 
+}
+.cover-container2{
+  max-width: 42em;
+}
+.bg-card-thanks{
+
+background-image: url(../img/svg.png);
+background-size: cover;
+background-color: #10918ba9;
+
+}
+.btn-lightcover :hover{
+  color:rgba(21, 163, 156, 0.51);
+}
