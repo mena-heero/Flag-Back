@@ -1,7 +1,7 @@
 {% load static %}
-{% load django_bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{% comment %} {% load django_bootstrap5 %} {% endcomment %}
+{% comment %} {% bootstrap_css %}
+{% bootstrap_javascript %} {% endcomment %}
 {% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -57,7 +57,7 @@
   <body>
     {% block content %}
 
-    {% bootstrap_messages %}
+    {% comment %} {% bootstrap_messages %} {% endcomment %}
      {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
