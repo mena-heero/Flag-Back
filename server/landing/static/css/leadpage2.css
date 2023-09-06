@@ -316,7 +316,7 @@ h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: rgba(255, 255, 255, 0.8);
+
 }
 
 #hero h1 span {
@@ -325,7 +325,7 @@ h6 {
 }
 
 #hero h2 {
-  color: rgba(255, 255, 255, 0.8);
+  
   margin-bottom: 40px;
   font-size: 24px;
 }
