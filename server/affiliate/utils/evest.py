@@ -10,11 +10,10 @@ def make_sha1(s, encoding="utf-8"):
 
 
 def create_access_key(time):
-    PARTNER_ID = config("partner_id"),
+    PARTNER_ID = config("partner_id")
     PARTNER_SECRET_KEY = config("partner_secret_key")
 
     TIME = time
-
     concatenated_string = PARTNER_ID + str(TIME) + PARTNER_SECRET_KEY
     ACCESS_KEY = make_sha1(concatenated_string)
     return ACCESS_KEY
@@ -25,7 +24,7 @@ def get_evest_token():
 
     l_time = int(time.time())
     access_key = create_access_key(l_time)
-
+    print("access_key: " + access_key)
     partner_id = config("partner_id"),
 
     data = {
@@ -45,6 +44,7 @@ def get_evest_token():
 
     try:
         token = json_data["data"]["token"]
+        print("Evest Token created successfully: " + str(token))
     except:
         token = None
     return token
@@ -70,9 +70,24 @@ def create_customer(data):
     }
 
     data_json = json.dumps(data)
+    print("creating customer...!")
     r = requests.post(url, headers=headers, data=data_json)
     content = r.json()
 
-    print("===========pppppp================")
-    print(content)
-    print(r.headers)
+    print("Evest Customer Created Successfully ---> ", content)
+
+    login_data = {
+        "email": data['email'],
+    }
+
+    data_json = json.dumps(login_data)
+
+    headers = {"Content-Type": "application/json", "Authorization": authorization}
+    login_url = "https://mena-evest.pandats-api.io/api/v3/system/loginToken"
+
+    r = requests.post(login_url, headers=headers, data=data_json)
+    json_data = r.json()
+
+    print("Evest Customer login Successfully ---> ", json_data)
+    return json_data['data']['url']
+

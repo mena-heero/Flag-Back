@@ -92,4 +92,5 @@ class EvestRegistrationSerializer(serializers.Serializer):
         data["country_code"] = country_code
         data["user_ip"] = user_ip
 
-        create_customer(data)
+        login_url = create_customer(data)
+        return login_url
