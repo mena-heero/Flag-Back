@@ -90,4 +90,3 @@ def create_customer(data):
 
     print("Evest Customer login Successfully ---> ", json_data)
     return json_data['data']['url']
-
