@@ -1,6 +1,6 @@
 from django.views import View
 from django.shortcuts import redirect, render
-
+from .utils import evest as evest_utils
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
@@ -16,7 +16,6 @@ from .serializers import *
 from .models import *
 from .filters import *
 from .utils.utils import get_country_code_from_ip, get_client_ip, create_analytics
-from authentication.models import User
 
 
 class CreativeApiViewset(viewsets.GenericViewSet, mixins.ListModelMixin):
@@ -42,6 +41,7 @@ class CreativeApiViewset(viewsets.GenericViewSet, mixins.ListModelMixin):
         if creative:
             data = self.serializer_class(creative).data
             return Response(data, status=status.HTTP_200_OK)
+
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -54,6 +54,8 @@ class CreativeRedirectView(View):
     template_name = "affiliate/index.html"
 
     def get(self, request):
+        print("Visit Api call")
+
         query_params = request.GET
         ci = query_params.get("ci")
         uai = query_params.get("uai")
@@ -76,9 +78,12 @@ class CreativeRedirectView(View):
             return render(request, self.template_name, variables)
 
         if redirect_url:
+            print("redirect_url", redirect_url)
             return redirect(redirect_url)
 
         variables = {}
+        print("Visit Api success")
+
         return render(request, self.template_name, variables)
 
 
@@ -100,6 +105,7 @@ class EvestApiViewset(viewsets.GenericViewSet):
         }
         """
         data = request.data
+        print('Signing up', data)
         ci = data.get("ci", None)
         uai = data.pop("uai", None)
         ani = data.pop("ani", None)
@@ -147,5 +153,11 @@ class EvestApiViewset(viewsets.GenericViewSet):
         )
 
         if serializer.is_valid():
-            serializer.signup()
+            try:
+                login_url = serializer.signup()
+            except Exception as e:
+                return Response(str(e.args[0]), status=status.HTTP_400_BAD_REQUEST)
+            return Response({"login_url": login_url}, status.HTTP_200_OK)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
