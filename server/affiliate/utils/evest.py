@@ -3,6 +3,7 @@ import hashlib
 import json
 import time
 from decouple import config
+from rest_framework.response import Response
 
 
 def make_sha1(s, encoding="utf-8"):
@@ -71,8 +72,11 @@ def create_customer(data):
 
     data_json = json.dumps(data)
     print("creating customer...!")
-    r = requests.post(url, headers=headers, data=data_json)
-    content = r.json()
+    create_customer_req = requests.post(url, headers=headers, data=data_json)
+    content = create_customer_req.json()
+    if create_customer_req.status_code != 201:
+        error = content['error'][0]['description']
+        raise Exception(error)
 
     print("Evest Customer Created Successfully ---> ", content)
 
@@ -85,8 +89,11 @@ def create_customer(data):
     headers = {"Content-Type": "application/json", "Authorization": authorization}
     login_url = "https://mena-evest.pandats-api.io/api/v3/system/loginToken"
 
-    r = requests.post(login_url, headers=headers, data=data_json)
-    json_data = r.json()
+    login_request = requests.post(login_url, headers=headers, data=data_json)
+    json_data = login_request.json()
+    if login_request.status_code != 200:
+        error = json_data.content['error'][0]['description']
+        raise Exception(error)
 
     print("Evest Customer login Successfully ---> ", json_data)
     return json_data['data']['url']

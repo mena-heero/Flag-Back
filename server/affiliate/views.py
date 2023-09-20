@@ -153,8 +153,11 @@ class EvestApiViewset(viewsets.GenericViewSet):
         )
 
         if serializer.is_valid():
-            login_url = serializer.signup()
-
+            try:
+                login_url = serializer.signup()
+            except Exception as e:
+                return Response(str(e.args[0]), status=status.HTTP_400_BAD_REQUEST)
             return Response({"login_url": login_url}, status.HTTP_200_OK)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

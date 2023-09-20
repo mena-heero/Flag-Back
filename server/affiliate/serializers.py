@@ -91,6 +91,9 @@ class EvestRegistrationSerializer(serializers.Serializer):
         user_ip = self.context["user_ip"]
         data["country_code"] = country_code
         data["user_ip"] = user_ip
-
-        login_url = create_customer(data)
+        try:
+            login_url = create_customer(data)
+        except Exception as e:
+            raise Exception(e)
         return login_url
+
