@@ -308,3 +308,10 @@ class CurrencyRateBlock(blocks.StructBlock):
     title = blocks.CharBlock(max_length=250, required=False)
     title_en = blocks.CharBlock(max_length=250, required=False)
     tabs = blocks.ListBlock(CurrencyTab())
+
+
+class AccordionBlock(blocks.StructBlock):
+    title = blocks.CharBlock(max_length=250)
+    title_en = blocks.CharBlock(max_length=250, required=False)
+    content = blocks.RichTextBlock()
+    content_en = blocks.RichTextBlock(required=False)
