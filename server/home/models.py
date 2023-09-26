@@ -147,6 +147,7 @@ class BasicPage(BasePage):
         [
             ("description", blocks.DescriptionBlock()),
             ("image_block", blocks.ImageBlock()),
+            ("AccordionBlock", blocks.AccordionBlock()),
         ],
         null=True,
         blank=True,
